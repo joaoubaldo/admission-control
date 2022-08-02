@@ -141,7 +141,7 @@ func (ah *AdmissionHandler) handleAdmissionRequest(w http.ResponseWriter, r *htt
 	review := admission.AdmissionReview{
 		TypeMeta: meta.TypeMeta{
 			Kind:       "AdmissionReview",
-			APIVersion: "v1",
+			APIVersion: "admission.k8s.io/v1",
 		},
 
 		Response: reviewResponse,

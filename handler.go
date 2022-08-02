@@ -139,6 +139,11 @@ func (ah *AdmissionHandler) handleAdmissionRequest(w http.ResponseWriter, r *htt
 
 	reviewResponse.UID = incomingReview.Request.UID
 	review := admission.AdmissionReview{
+		TypeMeta: meta.TypeMeta{
+			Kind:       "AdmissionReview",
+			APIVersion: "v1",
+		},
+
 		Response: reviewResponse,
 	}
 
